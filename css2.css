@@ -1,0 +1,145 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.5s ease, color 0.3s ease;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Темная тема (по умолчанию) */
+body.dark {
+    background: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark h1, body.dark h2 {
+    color: #D5F800;
+}
+
+body.dark a {
+    color: #D5F800;
+    text-decoration: none;
+}
+
+body.dark a:hover {
+    color: #E8FB71;
+    text-decoration: underline;
+}
+
+body.dark hr {
+    border-color: #3a3a5a;
+}
+
+body.dark ol {
+    background: #24243a;
+    border: 2px solid #C861D3;
+    border-radius: 12px;
+    padding: 20px 20px 20px 40px;
+    margin: 15px 0;
+}
+
+body.dark li {
+    margin: 8px 0;
+    color: #e0e0e0;
+}
+
+/* Светлая тема */
+body.light {
+    background: #f5f5f5;
+    color: #333333;
+}
+
+body.light h1, body.light h2 {
+    color: #9702A7;
+}
+
+body.light a {
+    color: #9702A7;
+    text-decoration: none;
+}
+
+body.light a:hover {
+    color: #62016D;
+    text-decoration: underline;
+}
+
+body.light hr {
+    border-color: #e0e0e0;
+}
+
+body.light ol {
+    background: #ffffff;
+    border: 2px solid #9702A7;
+    border-radius: 12px;
+    padding: 20px 20px 20px 40px;
+    margin: 15px 0;
+    box-shadow: 0 0 10px rgba(151, 2, 167, 0.2);
+}
+
+body.light li {
+    margin: 8px 0;
+    color: #333333;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+}
+
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border: 2px solid;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    z-index: 100;
+}
+
+body.dark .theme-toggle {
+    background: #24243a;
+    color: #E8FB71;
+    border-color: #E8FB71;
+}
+
+body.light .theme-toggle {
+    background: #ffffff;
+    color: #62016D;
+    border-color: #62016D;
+}
+
+.theme-toggle:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}

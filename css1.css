@@ -5,6 +5,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+    
+.card{
+    text-align: center;
+}
     background-color: lightyellow;
     padding: 1.5rem;
 }
@@ -31,4 +36,5 @@ p{
     line-height: 1; 
     margin: 0;
 }
+    
     

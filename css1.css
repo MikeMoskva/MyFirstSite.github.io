@@ -1,16 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
+/* White theme */
+body.white_theme{
+    background-color: rgb(192, 192, 192);
+    transition: background-color 0.35s ease, color 0.3s ease;
+}
+
+body.white_theme a{
+    background-color: rgb(220, 220, 220);
+    color: black;
+    border: 2px solid #1e1e2f;
+}
+
+body.white_theme a:hover{
+    background-color: rgb(192, 192, 192);
+    box-shadow: 10px 5px 5px 5px rgb(105 105 105);
+}
+
+body.white_theme .card{
+    background-color: rgb(248, 248, 255);
+    border: 1px solid #1e1e2f;
+    transition: background-color 0.35s ease, color 0.3s ease;
+}
+
+body.white_theme .change_theme{
+    background-color: #1e1e2f;
+}
+
+body.white_theme .change_theme:hover {
+    background-color: #2d2d44;
+}
+
+/* Black theme */
+body.black_theme{
+    background-color: #0B0E16;
+    transition: background-color 0.35s ease, color 0.3s ease;
+}
+
+body.black_theme .card{
+    background-color: #19191A;
+    border: 1px solid white;
+    transition: background-color 0.35s ease, color 0.3s ease;
+}
+
+body.black_theme .change_theme{
+    background-color: whitesmoke;
+}
+
+body.black_theme .change_theme:hover {
+    background: lightgray;
+}
+
+body.black_theme h1{
+    color: white;
+}
+
+body.black_theme h2{
+    color: white;
+}
+
+body.black_theme p{
+    color: white;
+}
+
+body.black_theme a{
+    background-color: #1e1e2f;
+    color: white;
+    border: 2px solid white;
+}
+
+body.black_theme a:hover{
+    background-color: #2d2d44;
+    box-shadow: 10px 5px 5px 5px white;
+}
+/* All styles */
 body{
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-    
-.card{
-    text-align: center;
-}
-    background-color: lightyellow;
+    box-sizing: border-box;
     padding: 1.5rem;
 }
 
@@ -26,15 +94,288 @@ p{
     font-family: "Quicksand", sans-serif;
 }
 
+a{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10%;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    transform: translateY(-3px);
+}
+
+
+.change_theme{
+    position: fixed;
+    align-items: center;
+    right: 2rem;
+    top: 1rem;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 20px;
+    padding: 3px 15px;
+    color: yellow;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 10%;
+}
+
+.change_theme:hover{
+    transform: translateY(-3px);
+}
 
 .card{
     text-align: center;
+    padding: 2rem 2rem ;
+    max-width: 650px;
+    width: 100%;
+    border-radius: 10%;
 }
     
 .activity{
-    text-align: left;
-    line-height: 1; 
-    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    "b b b b a a a"
+    "b b b b a a a"
+    "b b b b m m m"
+    "s s d d m m m"
+    "s s d d m m m";
+    height: 20rem;
+    gap: 5px;
+}
+
+
+.basketball{
+    grid-area: b;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    border-radius: 10%;
+}
+
+.bg_basketball{
+    position: absolute;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDhG_UlK587YrZy8ipYyMEPpbnY5T4hi-yoA&s");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    filter: blur(7px);
+    transition: filter 0.3s ease;
+}
+
+.basketball_text{
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.basketball:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.basketball:hover .bg_basketball{
+    filter: blur(0);
+}
+
+.basketball:hover .basketball_text{
+    opacity: 0;
+}
+
+
+.actor_game{
+    grid-area: a;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    border-radius: 10%;
+}
+
+.bg_actor{
+    position: absolute;
+    background-image: url("https://media.kudago.com/thumbs/xl/images/rich_editor/ea/69/ea6955c79b0edfce30e319c21c95953d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    filter: blur(7px);
+    transition: filter 0.3s ease;
+}
+
+.actor_text{
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.actor_game:hover{
+    transform: scale(1.1);
+}    
+
+.actor_game:hover .bg_actor{
+    filter: blur(0);
+}
+
+.actor_game:hover .actor_text{
+    opacity: 0;
+}
+
+
+.drawing{
+    grid-area: d;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    border-radius: 10%;
+}
+
+.bg_drawing{
+    position: absolute;
+    background-image: url("https://sketchbook.store/wp-content/uploads/2018/07/Gorodskoy-sketching.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    filter: blur(7px);
+    transition: filter 0.3s ease;
+}
+
+.drawing_text{
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.drawing:hover{
+    transform: scale(1.1);
+}
+
+.drawing:hover .bg_drawing{
+    filter: blur(0);
+}
+
+.drawing:hover .drawing_text{
+    opacity: 0;
+}
+
+
+.swimming{
+    grid-area: s;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    border-radius: 10%;
+}
+
+.bg_swimming{
+    position: absolute;
+    background-image: url("https://static-ilovesupersport.servicecdn.ru/store/uploads/pages/markdownimage/1818/image/preview-d8411455e38cff8d1fdcb9b9190cd2a1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    filter: blur(7px);
+    transition: filter 0.3s ease;
+}
+
+.swimming_text{
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.swimming:hover{
+    transform: scale(1.1);
+}
+
+.swimming:hover .bg_swimming{
+    filter: blur(0);
+}
+
+.swimming:hover .swimming_text{
+    opacity: 0;
+}
+
+
+.music{
+    grid-area: m;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    border-radius: 10%;
+}
+
+.bg_music{
+    position: absolute;
+    background-image: url("https://n1s1.hsmedia.ru/61/04/31/6104314ad3b305a39c0dcc61fd2afb0d/680x470_0xc0a8392b_7102594171428426893.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    filter: blur(7px);
+    transition: filter 0.3s ease;
+}
+
+.music_text{
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.music:hover{
+    transform: scale(1.1);
 }
     
-    
+.music:hover .bg_music{
+    filter: blur(0);
+}
+
+.music:hover .music_text{
+    opacity: 0;
+}
+
+
+
+
+
+
